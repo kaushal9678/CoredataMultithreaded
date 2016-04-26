@@ -1,0 +1,6 @@
+framework module Pods_CoredataMultithreaded {
+  umbrella header "Pods-CoredataMultithreaded-umbrella.h"
+
+  export *
+  module * { export * }
+}

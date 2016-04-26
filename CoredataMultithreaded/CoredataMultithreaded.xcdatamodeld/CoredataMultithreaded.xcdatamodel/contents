@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+    <entity name="City" representedClassName=".City" syncable="YES">
+        <attribute name="city_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state_id" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="states" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="State" inverseName="cities" inverseEntity="State" syncable="YES"/>
+    </entity>
+    <entity name="Country" representedClassName=".Country" syncable="YES">
+        <attribute name="country_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="states" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="State" inverseName="countries" inverseEntity="State" syncable="YES"/>
+    </entity>
+    <entity name="Products" representedClassName=".Products" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productID" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="State" representedClassName=".State" syncable="YES">
+        <attribute name="country_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state_id" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="City" inverseName="states" inverseEntity="City" syncable="YES"/>
+        <relationship name="countries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Country" inverseName="states" inverseEntity="Country" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="City" positionX="-92" positionY="108" width="128" height="118"/>
+        <element name="Country" positionX="-497" positionY="98" width="128" height="88"/>
+        <element name="Products" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="State" positionX="-308" positionY="108" width="128" height="118"/>
+    </elements>
+</model>
